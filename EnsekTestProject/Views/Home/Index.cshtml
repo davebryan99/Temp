@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "View";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+
+    <form name="promptform">
+
+        <div>
+            <br />
+            Enter Filename:  @Html.TextBox("Filename")
+
+            <input type="submit" id="send" value="submit" onclick="myvalidate()" />
+        </div>
+
+    </form>
+}
+
+
+<script>
+
+
+$(document).ready(function(){
+
+alert('@ViewBag.Message');
+
+});
+
+</script>
+
+
+
+
+<script type="text/javascript">
+   <!--
+
+
+    function myvalidate() {
+        if ($Document.getElementByName)
+            if (document.getElementByName("Filename") == "") {
+
+                alert("Please enter the file name!");
+                document.promptform.Filename.focus();
+                return false;
+            }
+
+
+    }
+</script>
